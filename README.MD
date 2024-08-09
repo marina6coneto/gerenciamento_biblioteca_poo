@@ -90,7 +90,7 @@ classDiagram
   Exemplar --|> Empréstimo
   Empréstimo --|> Usuário
 
-  ItemBiblioteca : +Título : String
+  ItemBiblioteca : +Título : String ItemBibli
   ItemBiblioteca : +ObterTítulo() : String
 
   Livro : +Editora : String
