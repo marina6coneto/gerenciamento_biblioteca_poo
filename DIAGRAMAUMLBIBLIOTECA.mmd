@@ -1,0 +1,61 @@
+classDiagram
+  ItemBiblioteca <|-- Livro
+  Livro "1" -- "1..*" Exemplar : contém
+  Livro "1" -- "1..*" Autor : tem
+  Exemplar "1" -- "1" Empréstimo : é emprestado para
+  Empréstimo "1" -- "1" Usuário : é feito por
+
+  class ItemBiblioteca {
+    +Título : String
+    +ObterTítulo() : String
+  }
+
+  class Livro {
+    +Título : String
+    +Editora : String
+    +Gêneros : Lista de String
+    +ExemplaresDisponíveis : Lista de Exemplar
+    +NúmeroMaximoRenovações : Inteiro
+    +AdicionarAutor(Autor)
+    +RemoverAutor(Autor)
+    +AdicionarGenero(String)
+    +RemoverGenero(String)
+    +EmprestarExemplar(Exemplar)
+    +DevolverExemplar(Exemplar)
+    +ObterAutores() : Lista de Autor
+    +ObterGeneros() : Lista de String
+    +ObterExemplaresDisponíveis() : Lista de Exemplar
+    +ObterNúmeroMaximoRenovações() : Inteiro
+  }
+
+  class Autor {
+    +Nome : String
+    +ObterNome() : String
+  }
+
+  class Exemplar {
+    +ID : Inteiro
+    +Estado : Enum(Emprestado, Devolvido)
+    +DataEmprestimo : Data
+    +DataDevolução : Data
+    +Livro : Livro
+    +Emprestar(Usuário, Data)
+    +Devolver(Data)
+  }
+
+  class Usuário {
+    +Nome : String
+    +Telefone : String
+    +Nacionalidade : String
+    +ObterNome() : String
+    +ObterTelefone() : String
+    +ObterNacionalidade() : String
+  }
+
+  class Empréstimo {
+    +DataEmprestimo : Data
+    +DataDevolução : Data
+    +Estado : Enum(Emprestado, Devolvido)
+    +Renovar(Data)
+    +Devolver(Data)
+  }
