@@ -81,7 +81,7 @@ Este diagrama UML representa o sistema de gerenciamento de biblioteca, com a imp
 
 **Diagrama:**
 
-```mermaid
+````mermaid
 classDiagram
   ItemBiblioteca <|.. Livro
   Livro --|> Exemplar
@@ -89,10 +89,10 @@ classDiagram
   Livro --|> Empréstimo
   Exemplar --|> Empréstimo
   Empréstimo --|> Usuário
-  
+
   ItemBiblioteca : +Título : String
   ItemBiblioteca : +ObterTítulo() : String
-  
+
   Livro : +Editora : String
   Livro : +Gêneros : Lista de String
   Livro : +ExemplaresDisponíveis : Lista de Exemplar
@@ -107,10 +107,10 @@ classDiagram
   Livro : +ObterGeneros() : Lista de String
   Livro : +ObterExemplaresDisponíveis() : Lista de Exemplar
   Livro : +ObterNúmeroMaximoRenovações(): Inteiro
-  
+
   Autor : +Nome : String
   Autor : +ObterNome() : String
-  
+
   Exemplar : +ID : Inteiro
   Exemplar : +Estado : Enum (Emprestado, Devolvido)
   Exemplar : +DataEmprestimo : Data
@@ -118,20 +118,19 @@ classDiagram
   Exemplar : +Livro : Livro
   Exemplar : +Emprestar(Usuário, Data)
   Exemplar : +Devolver(Data)
-  
+
   Usuário : +Nome : String
   Usuário : +Telefone : String
   Usuário : +Nacionalidade : String
   Usuário : +ObterNome() : String
   Usuário : +ObterTelefone() : String
   Usuário : +ObterNacionalidade() : String
-  
+
   Empréstimo : +DataEmprestimo : Data
   Empréstimo : +DataDevolução : Data
   Empréstimo : +Estado : Enum (Emprestado, Devolvido)
   Empréstimo : +Renovar(Data)
   Empréstimo : +Devolver(Data)
-```
 
 **Observações:**
 
