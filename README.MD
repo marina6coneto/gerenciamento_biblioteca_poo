@@ -87,7 +87,8 @@ Este diagrama UML representa o sistema de gerenciamento de biblioteca, implement
 
 **Diagrama:**
 
-\`\`\`mermaid
+```mermaid
+
 classDiagram
   ItemBiblioteca <|-- Livro
   Livro "1" -- "1..*" Exemplar : contém
@@ -149,7 +150,8 @@ classDiagram
     +Renovar(Data)
     +Devolver(Data)
   }
-\`\`\`
+  
+```
 
 **Observações:**
 
